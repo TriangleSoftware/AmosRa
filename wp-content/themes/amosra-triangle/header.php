@@ -33,6 +33,9 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'amosra-triangle' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
+	<!-- #Cyclone Slider -->
+	<?php if ( is_front_page() && function_exists('cyclone_slider') ) { cyclone_slider('introduction'); } ?>
 
 	<div id="content" class="site-content">

@@ -1,5 +1,6 @@
 /*
 Theme Name: amosra-triangle
+Theme URI: http://underscores.me/
 Author: Triangle Software
 Author URI: http://triangle.software/
 Description: Custom theme for Amos Ra (amosra.si)
@@ -553,8 +554,10 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
+	background: #ea4a64;
+	text-align: center;
+	height: 54px;
 }
 
 .main-navigation ul {
@@ -565,15 +568,30 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	float: none;
+	display: inline-block;
 	position: relative;
+	margin: 15px 20px;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #fff;
 }
+.main-navigation a:after{
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left:0;
+	width: 100%;
+	border-bottom: 4px solid transparent;
+	transition: 0.3s;
+}
+.main-navigation a:hover:after {
+	border-color: #FFFFFF;
 
+}
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -623,11 +641,20 @@ a:active {
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
 }
+@media screen and (max-width: 37.5em) {
+	.main-navigation {
+		background: none;
+		height:0;
+	}
+}
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	position: absolute;
+	left: 1em;
+	bottom: 1em;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -755,11 +782,13 @@ a:active {
 	background-color: #ffffff;
 }
 .site-branding {
+	height: 110px;
 	text-align: center;
 }
 .site-branding img {
 	height: 66px;
 	width: auto;
+	margin: 20px 0;
 }
 .site-title {
 	display: none;
