@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called amosra-triangle, or underscores.
+A starter theme called amosra-triangle.
 
 == Description ==
 
@@ -29,7 +29,7 @@ amosra-triangle includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - Nov 02 2016 =
 * Initial release
 
 == Credits ==

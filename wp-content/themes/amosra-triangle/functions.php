@@ -45,6 +45,7 @@ function amosra_triangle_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'amosra-triangle' ),
+        'secondary' => esc_html__( 'Secondary', 'amosra-triangle' )
 	) );
 
 	/*

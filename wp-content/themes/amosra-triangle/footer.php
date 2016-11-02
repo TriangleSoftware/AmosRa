@@ -14,11 +14,12 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-				<span>Amos Ra © 2016</span>
-			<span class="sep"> | </span>
-			 by <a href="http://triangle.software/" rel="designer">Triangle Software</a>. All Rights Reserved
-		</div><!-- .site-info -->
+<!--		<div class="site-info">-->
+<!--			<a href="http://triangle.software/" rel="designer">Triangle Software © 2016</a>-->
+<!--		</div><!-- .site-info -->
+		<nav id="site-navigation" class="secondary-menu" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
+		</nav>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
