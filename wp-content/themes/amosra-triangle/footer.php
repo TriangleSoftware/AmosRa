@@ -14,10 +14,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-<!--		<div class="site-info">-->
-<!--			<a href="http://triangle.software/" rel="designer">Triangle Software © 2016</a>-->
-<!--		</div><!-- .site-info -->
 		<nav id="site-navigation" class="secondary-menu" role="navigation">
+			<?php if (function_exists(clean_custom_menus())) clean_custom_menus(); ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
 		</nav>
 	</footer><!-- #colophon -->

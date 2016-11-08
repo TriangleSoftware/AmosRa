@@ -3,7 +3,7 @@ Theme Name: amosra-triangle
 Theme URI: http://underscores.me/
 Author: Triangle Software
 Author URI: http://triangle.software/
-Description: Custom theme for Amos Ra (amosra.si)
+Description: Custom theme for Amos Ra (amosra.si). Two sample templates in Page Attributes, for a sidebar or without sidebar. Smartly organized starter CSS in style.css. A helpful 404 template.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -709,6 +709,15 @@ a:active {
 }
 .secondary-menu li a:hover { color:#fff; text-decoration:underline;}
 .secondary-menu li:last-child > a {border-right: none;} /* remove pipe from last item */
+/*Social Menu */
+.social-icon {
+
+}
+.social-icon a {
+	width: 250px;
+	height: 250px;
+	background-image: url(http://localhost/wp-content/uploads/2016/11/instagram-icon.png);
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
