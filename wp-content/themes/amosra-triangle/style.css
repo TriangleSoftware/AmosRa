@@ -37,19 +37,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Footer
 # Widgets
 # Content
+	## Global
 	## Posts and pages
 	## Comments
+	## Section
+	## About
+	## Retreats
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
+# Other
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
+	/*font-family: sans-serif;*/
+	font-family: "Roboto Slab";
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -285,15 +291,18 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Roboto Slab', serif;
+	/*font-family: 'Roboto Slab', serif;*/
+	font-weight: 300;
 	clear: both;
 	line-height: 1.3em;
-	margin-top: 2.5rem;
+	margin-top: 2rem;
 	margin-bottom: 1rem;
+	color:  #ea4a64;
+
 }
 
 h1 { font-size:2.4em; }
-h2 { font-size:2.2em; }
+h2 { font-size:2.2rem; }
 h3 { font-size:2em; }
 h4 { font-size:1.8em; }
 h5 { font-size:1.6em; }
@@ -531,7 +540,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: #FFFFFF;
 }
 
 a:hover,
@@ -661,7 +670,48 @@ a:active {
 	display: block;
 }
 .menu-toggle {
-
+	position: fixed;
+	z-index: 100;
+	bottom: 1em;
+	left: 1em;
+	font-size:1em;
+	text-transform: uppercase;
+	background-color: #ea4a64;
+	color: #fff;
+	border: solid 2px #fff;
+	box-shadow: none;
+	transition: all ease-out 400ms;
+}
+.menu-toggle.hide {bottom: -2.5em;}
+/* Make sure the button doesn't hide when menu is open. */
+.toggled .menu-toggle.hide {
+	bottom: 1em;
+}
+.menu-toggle:focus,
+.menu-toggle:active{
+	box-shadow: none;
+}
+.main-navigation.toggled {
+	position: fixed;
+	bottom: 0;
+	padding: 1em;
+	z-index: 99;
+	background-color: #ea4a64;
+	width: calc(100% + 1px);
+	height:41%;
+	transition: all ease 400ms;
+}
+.main-navigation.toggled ul {
+	max-height: calc(100vh - 8em);
+	overflow-y: auto;
+}
+.main-navigation.toggled ul li {
+	display: block;
+}
+.main-navigation.toggled ul ul {display: none;}
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -694,10 +744,11 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+
 /*Secondary Menu - Footer Menu*/
 .secondary-menu { display: block; width:100%;}
 .secondary-menu div {text-align: center}
-.secondary-menu ul { display:inline; float:none; width: 100%;margin: 0 auto;}
+.secondary-menu ul { display:inline; float:none; width: 100%;margin: 0 auto;padding:0;}
 .secondary-menu li { list-style-type: none; display: inline; font-size: 14px;}
 .secondary-menu li a {
 	color:#FFFFFF;
@@ -709,15 +760,7 @@ a:active {
 }
 .secondary-menu li a:hover { color:#fff; text-decoration:underline;}
 .secondary-menu li:last-child > a {border-right: none;} /* remove pipe from last item */
-/*Social Menu */
-.social-icon {
 
-}
-.social-icon a {
-	width: 250px;
-	height: 250px;
-	background-image: url(http://localhost/wp-content/uploads/2016/11/instagram-icon.png);
-}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -830,9 +873,36 @@ a:active {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
-	height: 200px;
+	min-height: 200px;
 	background: #aeafaf;
+
 }
+.site-footer a:hover{
+	filter:invert(100%);
+	transition: filter 0.8s ease;
+}
+
+.secondary-menu{
+	margin:3.25rem auto;
+}
+
+#site-navigation > div.class\3d{
+	margin-bottom: 1.81rem;
+}
+#site-navigation > div.class\3d > ul > li> a>img{
+	width:3.37rem;
+	height: 3.37rem;
+}
+/*#site-navigation > div.class\3d > ul > li> a>img:hover{*/
+	 /*filter:invert(100%);*/
+ /*}*/
+#site-navigation > div.class\3d > ul > li:nth-child(1) > a {
+	border:none;
+}
+#site-navigation > div.class\3d > ul > li:nth-child(1) > a:hover{
+	text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -915,7 +985,145 @@ a:active {
 .bypostauthor {
 	display: block;
 }
+/*--------------------------------------------------------------
+## Section
+--------------------------------------------------------------*/
+.entry-content section * {
+	max-width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+@media screen and (max-width: 40em){
+	.entry-content section * {
+		max-width: 100%;}
+}
+.main-color{color: #ea4a64}
+#welcome-section,
+#about-section { padding:2rem;}
 
+#introduction-section {
+	background: #f5f5f5;
+	padding: 3.2rem 0;
+}
+
+/*--------------------------------------------------------------
+## About
+--------------------------------------------------------------*/
+
+#about-into > img{
+	width:100%;
+	margin-bottom: 2rem;
+}
+#about-circle{
+	width:16vw;
+	height: 16vw;
+	border-radius:50%;
+	background-color: #20b496;
+	opacity:0.9;
+	position:absolute;
+	oppacity:0.9;
+	top:calc(110px + 16vmin);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display:table;
+}
+/*text*/
+
+#about-circle p{
+	text-align: center;
+	color: white;
+	font-size: 2vw;
+	font-weight: 300;
+	display:table-cell;
+	vertical-align: middle;
+}
+/*--------------------------------------------------------------
+## Retreats
+--------------------------------------------------------------*/
+#retreats{
+	color: #f7f7f7;
+	font-size:1rem;
+	text-align: center;
+}
+#retreats h2{
+	position:relative;
+	z-index:10;
+	color:#ffffff;
+	margin:0 auto;
+	padding-top:1em;
+}
+
+#intro-retreat{
+	background-color:#13b898;
+}
+#intro-retreat>p{
+	margin-bottom:0;
+	position:relative;
+	z-index:10;
+}
+#half-circle{
+	width: 245px;
+	height: 245px;
+	position: relative;
+	z-index:9;
+	border-radius: 50%;
+	/*background-color: green;*/
+    background-color:#13b898;
+	top: 2.5em;
+	margin-top: -12em;
+	z-index: 9;
+}
+#retro-retreats , #wine-retreats{
+	height:600px;
+}
+#retro-retreats{
+	background: url("/wp-content/themes/amosra-triangle/images/retreats-img-01.jpg") no-repeat;
+	background-size: cover ;
+}
+#wine-retreats{
+	background: url("/wp-content/themes/amosra-triangle/images/retreats-img-02.jpg") no-repeat;
+	background-size: cover ;
+}
+.retreated{
+	width: 26rem;
+	height: 26rem;
+	border-radius: 50%;
+	background-color:#13b898;
+	margin:0 auto;
+	position:relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.retreated article{
+	padding:0.2em 3em 0 3.8em;
+}
+.retreated article h2{
+
+	padding-right:20%;
+	padding-left:20%;
+}
+.retreated article p{
+	margin-bottom:1em;
+}
+.retreated button{
+	box-shadow: 2px 4px 9.5px 0.5px rgba(4, 4, 4, 0.2);
+	width: 168px;
+	height: 46px;
+	border-radius:10px;
+	background-color: #ea4a64;
+	font-size:1em;
+	color:  #ffffff;
+	font-weight:300;
+	border:none;
+	padding:0;
+}
+@media screen and (max-width: 30em){
+	.retreated {
+		width: 22rem;
+		height: 22rem;}
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1020,6 +1228,9 @@ object {
 .gallery-caption {
 	display: block;
 }
+/*--------------------------------------------------------------
+# Other
+--------------------------------------------------------------*/
 /*CSS for no-sidebar page*/
 .page-template-no-sidebar-page-php .entry-header,
 .page-template-no-sidebar-page-php .entry-content,
@@ -1028,15 +1239,15 @@ object {
 {
 	padding-right: 0;
 }
-/*Ciclone Slider Custome CSS*/
-.cycloneslider-template-standard .cycloneslider-pager {
-	bottom:18px!important;
+/*Slider*/
+#n2-ss-4-align{
+	padding-bottom:10px;
 }
+
 .su-heading-style-default,
 .su-heading-style-default .su-heading-inner{
 	border:none !important;
 }
-.entry-content {
-	max-width:600px;
-	margin: 0 auto;
-}
+
+header.entry-header { display: none;}
+.entry-content {margin-top: 0;}

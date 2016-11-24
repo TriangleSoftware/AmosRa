@@ -49,9 +49,12 @@ get_header(); ?>
 			endif;
 
 			?>
-
+			<?php
+			echo do_shortcode('[smartslider3 slider=4]');
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
 
 <?php
 get_footer();
